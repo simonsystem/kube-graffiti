@@ -1,9 +1,9 @@
-NAME   := hotelsdotcom/kube-graffiti
+NAME   := telefonica/kube-graffiti
 TAG    := $(shell git describe --tags)
 IMG    := ${NAME}:${TAG}
 LATEST := ${NAME}:latest
 
-build:test
+build:
 	@docker build -t "${IMG}" .
 	@docker tag ${IMG} ${LATEST}
  

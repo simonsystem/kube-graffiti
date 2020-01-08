@@ -20,7 +20,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/HotelsDotCom/kube-graffiti/pkg/log"
+	"github.com/Telefonica/kube-graffiti/pkg/log"
 	"github.com/rs/zerolog"
 	admission "k8s.io/api/admission/v1beta1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

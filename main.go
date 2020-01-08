@@ -14,7 +14,7 @@ limitations under the License.
 package main
 
 import (
-	"github.com/HotelsDotCom/kube-graffiti/cmd"
+	"github.com/Telefonica/kube-graffiti/cmd"
 )
 
 func main() {

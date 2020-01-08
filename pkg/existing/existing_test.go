@@ -19,7 +19,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/HotelsDotCom/kube-graffiti/pkg/config"
+	"github.com/Telefonica/kube-graffiti/pkg/config"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"

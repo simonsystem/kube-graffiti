@@ -20,7 +20,7 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"github.com/HotelsDotCom/kube-graffiti/pkg/log"
+	"github.com/Telefonica/kube-graffiti/pkg/log"
 	admission "k8s.io/api/admission/v1beta1"
 	"k8s.io/apimachinery/pkg/runtime"
 )

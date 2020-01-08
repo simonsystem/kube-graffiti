@@ -18,7 +18,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/HotelsDotCom/kube-graffiti/pkg/log"
+	"github.com/Telefonica/kube-graffiti/pkg/log"
 	jsonpatch "github.com/cameront/go-jsonpatch"
 	"github.com/rs/zerolog"
 	apivalidation "k8s.io/apimachinery/pkg/api/validation"

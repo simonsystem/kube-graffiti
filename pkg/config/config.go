@@ -17,10 +17,10 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/HotelsDotCom/kube-graffiti/pkg/graffiti"
-	"github.com/HotelsDotCom/kube-graffiti/pkg/healthcheck"
-	"github.com/HotelsDotCom/kube-graffiti/pkg/log"
-	"github.com/HotelsDotCom/kube-graffiti/pkg/webhook"
+	"github.com/Telefonica/kube-graffiti/pkg/graffiti"
+	"github.com/Telefonica/kube-graffiti/pkg/healthcheck"
+	"github.com/Telefonica/kube-graffiti/pkg/log"
+	"github.com/Telefonica/kube-graffiti/pkg/webhook"
 )
 
 const (

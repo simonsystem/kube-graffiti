@@ -17,8 +17,8 @@ import (
 	"errors"
 	"reflect"
 
-	"github.com/HotelsDotCom/kube-graffiti/pkg/graffiti"
-	"github.com/HotelsDotCom/kube-graffiti/pkg/log"
+	"github.com/Telefonica/kube-graffiti/pkg/graffiti"
+	"github.com/Telefonica/kube-graffiti/pkg/log"
 )
 
 // objectsNamespaceMatchesProvidedSelector decides whether the object/object's namespace matches the namespace selector provided.

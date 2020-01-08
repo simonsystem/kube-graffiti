@@ -16,7 +16,7 @@ package graffiti
 import (
 	"fmt"
 
-	"github.com/HotelsDotCom/kube-graffiti/pkg/log"
+	"github.com/Telefonica/kube-graffiti/pkg/log"
 	"github.com/rs/zerolog"
 	"k8s.io/apimachinery/pkg/fields"
 	labels "k8s.io/apimachinery/pkg/labels"

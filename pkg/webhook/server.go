@@ -20,8 +20,8 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/HotelsDotCom/kube-graffiti/pkg/graffiti"
-	"github.com/HotelsDotCom/kube-graffiti/pkg/log"
+	"github.com/Telefonica/kube-graffiti/pkg/graffiti"
+	"github.com/Telefonica/kube-graffiti/pkg/log"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
 )

@@ -6,3 +6,4 @@ debug
 kubectl
 .DS_Store
 kube-graffiti-*.tgz
+vendor

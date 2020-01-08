@@ -16,7 +16,7 @@ package config
 import (
 	"testing"
 
-	"github.com/HotelsDotCom/kube-graffiti/pkg/graffiti"
+	"github.com/Telefonica/kube-graffiti/pkg/graffiti"
 	yaml "gopkg.in/yaml.v2"
 
 	"github.com/stretchr/testify/assert"
