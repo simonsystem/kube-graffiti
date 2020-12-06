@@ -241,7 +241,7 @@ func setDefaults() {
 	viper.SetDefault("server.company-domain", "acme.com")
 	viper.SetDefault("server.ca-cert-path", "/ca-cert")
 	viper.SetDefault("server.cert-path", "/server-cert")
-	viper.SetDefault("server.cert-path", "/server-key")
+	viper.SetDefault("server.key-path", "/server-key")
 }
 
 func unmarshalFromViperStrict() (config.Configuration, error) {
