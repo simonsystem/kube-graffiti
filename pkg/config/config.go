@@ -31,7 +31,7 @@ const (
 
 // Configuration models the structre of our configuration values loaded through viper.
 type Configuration struct {
-	_             string                    `mapstructure:"config" yaml:"config,omitempty"`
+	_             string                    `mapstructure:"config" yaml:"config"`
 	LogLevel      string                    `mapstructure:"log-level" yaml:"log-level"`
 	CheckExisting bool                      `mapstructure:"check-existing" yaml:"check-existing,omitempty"`
 	HealthChecker healthcheck.HealthChecker `mapstructure:"health-checker" yaml:"health-checker,omitempty"`

@@ -22,7 +22,10 @@ import (
 )
 
 func TestUnknownConfigurationFieldsThrowAnError(t *testing.T) {
-	var source = `elvis: "thank-you very much"`
+    var source = `---
+server:
+  elvis: "thank-you very much"
+`
 	setDefaults()
 	viper.Set("log-level", "debug")
 	viper.SetConfigType("yaml")

@@ -27,6 +27,8 @@ spec:
           env:
           - name: GRAFFITI_CONFIG
             value: "/config/graffiti-config.yaml"
+          - name: GRAFFITI_LOGLEVEL
+            value: "{{ .Values.logLevel }}"
           ports:
           - name: https
             containerPort: {{ .Values.server.port }}

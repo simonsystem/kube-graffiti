@@ -19,6 +19,7 @@ import (
 	"reflect"
 	"strings"
 	"text/template"
+    "github.com/Masterminds/sprig"
 )
 
 func createPatchOperand(src, add, fm map[string]string, del []string, path string) (string, error) {
@@ -104,7 +105,7 @@ func renderMapValues(src, data map[string]string) (map[string]string, error) {
 // renderStringTemplate will treat the input string as a template and render with data as its context
 // useful for allowing dynamically created values.
 func renderStringTemplate(field string, data interface{}) (string, error) {
-	tmpl, err := template.New("field").Parse(field)
+	tmpl, err := template.New("field").Funcs(sprig.TxtFuncMap()).Parse(field)
 	if err != nil {
 		return "", fmt.Errorf("failed to parse field template: %v", err)
 	}
