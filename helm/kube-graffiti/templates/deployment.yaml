@@ -1,4 +1,4 @@
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "kube-graffiti.fullname" . }}
@@ -19,6 +19,12 @@ spec:
         app: {{ include "kube-graffiti.name" . }}
         release: {{ .Release.Name }}
     spec:
+      {{- if .Values.imagePullSecrets }}
+      imagePullSecrets:
+      {{- range .Values.imagePullSecrets }}
+      - name: {{ . }}
+      {{- end }}
+      {{- end }}
       serviceAccountName: {{ include "kube-graffiti.fullname" . }}
       containers:
         - name: {{ .Chart.Name }}
