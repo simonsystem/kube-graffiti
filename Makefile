@@ -1,4 +1,4 @@
-NAME   := telefonica/kube-graffiti
+NAME   := massmedicalsociety/kube-graffiti
 TAG    := $(shell git describe --tags)
 IMG    := ${NAME}:${TAG}
 LATEST := ${NAME}:latest

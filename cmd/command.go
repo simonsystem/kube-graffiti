@@ -229,6 +229,7 @@ func loadConfig(file string) (config.Configuration, error) {
 		os.Exit(1)
 	}
 
+    viper.Debug()
 	return unmarshalFromViperStrict()
 }
 
@@ -241,11 +242,12 @@ func setDefaults() {
 	viper.SetDefault("server.company-domain", "acme.com")
 	viper.SetDefault("server.ca-cert-path", "/ca-cert")
 	viper.SetDefault("server.cert-path", "/server-cert")
-	viper.SetDefault("server.cert-path", "/server-key")
+	viper.SetDefault("server.key-path", "/server-key")
 }
 
 func unmarshalFromViperStrict() (config.Configuration, error) {
-	var c config.Configuration
+    var c config.Configuration
+
 	// add in a special decoder so that viper can unmarshal boolean operator values such as AND, OR and XOR
 	// and enable mapstructure's ErrorUnused checking so we can catch bad configuration keys in the source.
 	decoderHookFunc := mapstructure.ComposeDecodeHookFunc(
@@ -255,9 +257,25 @@ func unmarshalFromViperStrict() (config.Configuration, error) {
 	)
 	opts := decodeHookWithErrorUnused(decoderHookFunc)
 
-	if err := viper.Unmarshal(&c, opts); err != nil {
-		return c, fmt.Errorf("failed to unmarshal configuration: %v", err)
+	if err := viper.UnmarshalKey("server", &c.Server, opts); err != nil {
+		return c, fmt.Errorf("failed to unmarshal server: %v", err)
 	}
+	if err := viper.UnmarshalKey("health-check", &c.HealthChecker, opts); err != nil {
+		return c, fmt.Errorf("failed to unmarshal health-check: %v", err)
+	}
+	if err := viper.UnmarshalKey("rules", &c.Rules, opts); err != nil {
+		return c, fmt.Errorf("failed to unmarshal rules: %v", err)
+	}
+    c.LogLevel = viper.GetString("log-level")
+    if !viper.IsSet("check-existing") || viper.GetString("check-existing") != "true" {
+        c.CheckExisting = false
+    } else {
+        c.CheckExisting = true
+    }
+
+	//if err := viper.Unmarshal(&c2, opts); err != nil {
+	//	return c2, fmt.Errorf("failed to unmarshal configuration: %v", err)
+	//}
 	return c, nil
 }
 
